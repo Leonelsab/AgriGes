@@ -1,0 +1,86 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Cacao en Matagalpa"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-85.920479, 12.925647]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Cacao en Jinotega"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-85.996392, 13.091201]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Cacao en Bilwi (RAAN)"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-83.378537, 14.038869]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Cacao en Bluefields (RAAS)"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-83.759654, 12.000329]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Cacao en San Carlos (Río San Juan)"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-84.775348, 11.124092]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Cacao en Nueva Guinea (RAAS)"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-84.455047, 11.687243]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Cacao en Juigalpa (Chontales)"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-85.379145, 12.106391]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Cacao en Boaco"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-85.662148, 12.472689]
+        }
+      }
+    ]
+  }
+  

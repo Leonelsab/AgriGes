@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mensajes</title>
+    <link rel="stylesheet" href="stylesss.css" />
+</head>
+
+<body>
+    <form action="">
+        <div>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre">
+        </div>
+
+        <div>
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" required>
+        </div>
+
+        <div>
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje"rows="4"></textarea>
+        </div>
+
+        <button type="button" id="btnEnviar">Enviar </button>
+    </form>
+
+    <ul id="chatUl"></ul>
+
+    <!-- ... (código anterior) ... -->
+
+    <script type="module">
+     // Import the functions you need from the SDKs you need
+     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
+        import { getDatabase, ref, push, set, onValue, remove } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-database.js";
+    
+        // Configuración de Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyCgRip-vOzkAVB9l4w-hoIZcm_zr3mAGaw",
+            authDomain: "agriges-432cb.firebaseapp.com",
+            databaseURL: "https://agriges-432cb-default-rtdb.firebaseio.com",
+            projectId: "agriges-432cb",
+            storageBucket: "agriges-432cb.appspot.com",
+            messagingSenderId: "397829479377",
+            appId: "1:397829479377:web:7a0b3181be45b603fb9ef0",
+            measurementId: "G-XQ5BDMQ5GG"
+        };
+
+        // Inicializar Firebase
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+
+        var txtNombre = document.getElementById('nombre');
+        var txtTelefono = document.getElementById('telefono');
+        var txtMensaje = document.getElementById('mensaje');
+        var btnEnviar = document.getElementById('btnEnviar');
+        var chatUl = document.getElementById('chatUl');
+
+        btnEnviar.addEventListener('click', function () {
+            var nombre = txtNombre.value;
+            var telefono = txtTelefono.value;
+            var mensaje = txtMensaje.value;
+            var html = "<li><b>" + nombre + ", " + telefono + ":</b> " + mensaje + "</li>";
+            chatUl.innerHTML += html;
+
+            // Corregir la referencia a la base de datos y utilizar set() en lugar de push()
+            push(ref(database, 'chat'), {
+                nombre: nombre,
+                telefono: telefono,
+                mensaje: mensaje
+            });
+
+            // Limpiar campos después de enviar el mensaje
+            txtNombre.value = "";
+            txtTelefono.value = "";
+            txtMensaje.value = "";
+        });
+    </script>
+
+    <!-- ... (código posterior) ... -->
+
+</body>
+
+</html>
